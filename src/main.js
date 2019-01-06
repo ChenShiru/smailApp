@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Button,Row,Col, SwipeItem, Swipe,Lazyload, List, Field, NavBar} from 'vant'
+import {Tabs,Tab,Button,Row,Col, SwipeItem, Swipe,Lazyload, List, Field, NavBar} from 'vant'
 
 Vue
+.use(Tabs)
+.use(Tab)
 .use(Button)
 .use(Row)
 .use(Col)

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema //声明Schema
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 let ObjectId = Schema.Types.ObjectId//声明Object 类型
 const SALT_WORK_FACTOR = 10
 //创建我的的用户Schema

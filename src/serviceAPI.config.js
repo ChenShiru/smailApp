@@ -5,6 +5,9 @@ const URL = {
     getshopingMallInfo: BASEURL+'index',//商城首页所有信息
     getGoodsInfo: BASEURL+'getGoodsInfo',
     registerUser:LOCALURL+'user/register',//用户注册接口
-    login:LOCALURL+'user/login'
+    login:LOCALURL+'user/login',
+    getDetailGoodsInfo:LOCALURL+'goods/getDetailGoodsInfo',
+    getCategoryList: LOCALURL+'goods/getCategory',
+    getCategorySubList:LOCALURL+'goods/getCategorySub',   //得到小类信息
 }
 module.exports = URL
