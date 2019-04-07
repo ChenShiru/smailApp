@@ -101,11 +101,14 @@ router.post('/getCategorySub',async(ctx)=>{
     }
 })
 
-router.get('/getGoodByCategorySubId',async(ctx)=>{
+router.post('/getGoodsListByCategorySubID',async(ctx)=>{
     try{
-        let categorySubId = '2c9f6c946016ea9b016016f79c8e0000'
+        let categorySubId = ctx.request.body.categorySubId//小类别
+        let page = ctx.request.body.page
+        let num = 10//每页显示数量
+        let start  = (page-1)*num
         const Goods = mongoose.model('Goods')
-        let result = await Goods.find({SUB_ID:categorySubId}).exec()
+        let result = await Goods.find({SUB_ID:categorySubId}).skip(start).limit(num).exec()
         ctx.body = {code:200, message:result}
     }catch(err){
         ctx.body={code:500, message:err}

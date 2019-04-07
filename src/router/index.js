@@ -6,15 +6,32 @@ import Register from '@/components/pages/Register'
 import Login from '@/components/pages/Login'
 import Goods from '@/components/pages/Goods'
 import CategoryList from '@/components/pages/CategoryList'
+import Cart from '@/components/pages/Cart'
+import Main from '@/components/pages/Main'
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'ShoppingMail',
-      component: ShoppingMail
+    {path: '/main',name: 'Main',component: Main,
+      children:[
+        {
+          path: '/',
+          name: 'ShoppingMail',
+          component: ShoppingMail
+        },
+        {
+          path:'/categoryList',
+          name:'CategoryList',
+          component:CategoryList
+        },
+        {
+          path:'/Cart',
+          name:'Cart',
+          component:Cart
+        }
+      ]
     },
+    
     { 
       path: '/register',
       name:'Register',
@@ -31,10 +48,7 @@ export default new Router({
       name: 'Goods',
       component:Goods
     },
-    {
-      path:'/categoryList',
-      name:'CategoryList',
-      component:CategoryList
-    }
+   
+   
   ]
 })
