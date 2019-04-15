@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {Tabs,Tabbar,TabbarItem,Stepper,Toast,Tab,Button,PullRefresh,Row,Col, SwipeItem, Swipe,Lazyload, List, Field, NavBar} from 'vant'
-
+import '@/assets/css/iconfont.css'
+import 'babel-polyfill'
+import store from './store'
 Vue
 .use(TabbarItem)
 .use(Tabbar)
@@ -29,6 +31,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
